@@ -1,0 +1,18 @@
+name: Build APK
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install
+        run: |
+          pip install buildozer
+          sudo apt-get update
+          sudo apt-get install -y openjdk-11-jdk
+      - name: Build
+        run: buildozer android debug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GameAPK
+          path: bin/
