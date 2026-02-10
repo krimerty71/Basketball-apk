@@ -21,7 +21,7 @@ jobs:
     - name: Create buildozer.spec
       run: |
         echo '[app]
-title = Мячик Баскетбол
+echo '[app]
 package.name = myachik
 package.domain = com.antoha
 source.dir = .
